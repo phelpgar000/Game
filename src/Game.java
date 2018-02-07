@@ -2,6 +2,8 @@ import javax.swing.*;
 
 public class Game extends JFrame{
 
+    private Board board;
+
     public Game(){
 
         setResizable(false);
@@ -9,8 +11,16 @@ public class Game extends JFrame{
         setFocusable(true);
         setTitle("Suck it Hugh Hefneir");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        board = new Board(this);
+        add(board);
+        pack();
+        setLocationRelativeTo(null);
+        board.GameStart();
 
+    }
 
+    public static void main(String[] args){
+        new Game();
     }
 
 }
