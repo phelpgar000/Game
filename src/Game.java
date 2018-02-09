@@ -9,7 +9,7 @@ public class Game extends JFrame{
         setResizable(false);
         setVisible(true);
         setFocusable(true);
-        setTitle("Suck it Hugh Hefneir");
+        setTitle("Brick");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         board = new Board(this);
         add(board);
