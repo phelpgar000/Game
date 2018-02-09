@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class Block {
     private int x, y;
-    private final int WIDTH = 50, HEIGHT = 20;
+    private final int WIDTH = 75, HEIGHT = 35;
 
     Board board;
     Game game;

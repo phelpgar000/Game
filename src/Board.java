@@ -7,10 +7,12 @@ public class Board extends JPanel{
     Block block;
     Paddle paddle;
 
+    final int SPACE = 20;
+
     public Board(Game game){
 
         setPreferredSize(new Dimension(800, 600));
-        setBackground(Color.CYAN);
+        setBackground(Color.BLACK);
         ball = new Ball(this);
         block = new Block(this, game, ball);
         paddle = new Paddle(this, game, ball);
@@ -20,7 +22,7 @@ public class Board extends JPanel{
     public void GameStart(){
 
         ball.setPosition(getWidth()/2, (getHeight()/4)*3);
-        block.setPosition(getWidth()/2, getHeight()/2);
+        block.setPosition(SPACE, SPACE);
         paddle.setPosition(getWidth()/2, getHeight()/6*5);
     }
 
