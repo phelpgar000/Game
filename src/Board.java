@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Board extends JPanel{
+public class Board extends JPanel implements ActionListener{
 
     Ball ball;
     Block block;
@@ -26,6 +28,13 @@ public class Board extends JPanel{
         paddle.setPosition(getWidth()/2, getHeight()/6*5);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        paddle.move();
+        repaint();
+    }
+
+    @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         g.setColor(Color.BLUE);
