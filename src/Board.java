@@ -8,6 +8,7 @@ public class Board extends JPanel implements ActionListener{
     Ball ball;
     Block block;
     Paddle paddle;
+    Timer timer;
 
     final int SPACE = 20;
 
@@ -26,12 +27,21 @@ public class Board extends JPanel implements ActionListener{
         ball.setPosition(getWidth()/2, (getHeight()/4)*3);
         block.setPosition(SPACE, SPACE);
         paddle.setPosition(getWidth()/2, getHeight()/6*5);
+        timer = new Timer(1000/60, this);
+        timer.start();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         paddle.move();
+        ball.move(paddle);
         repaint();
+
+        ball.checkCollisons(paddle);
+    }
+
+    public int getSPACE(){
+        return SPACE;
     }
 
     @Override

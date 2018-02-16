@@ -17,12 +17,12 @@ public class Paddle {
 
         public void move(){
             if(game.isLeftPressed()){
-                if(x>0){
+                if(x > 0){
                     x -= 5;
                 }
             }
             if(game.isRightPressed()){
-                if(x+PWIDTH < board.getWidth()){
+                if(x + PWIDTH < board.getWidth()){
                     x += 5;
                 }
             }
