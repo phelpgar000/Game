@@ -24,9 +24,9 @@ public class Board extends JPanel implements ActionListener{
 
     public void GameStart(){
 
-        ball.setPosition(getWidth()/2, (getHeight()/4)*3);
-        block.setPosition(SPACE, SPACE);
-        paddle.setPosition(getWidth()/2, getHeight()/6*5);
+        ball.setPosition(getWidth()/2, (getHeight()/10)*8);
+        block.makeBlocks();
+        paddle.setPosition(getWidth()/2, getHeight()/10*9);
         timer = new Timer(1000/60, this);
         timer.start();
     }
@@ -49,10 +49,12 @@ public class Board extends JPanel implements ActionListener{
         super.paintComponent(g);
         g.setColor(Color.BLUE);
         ball.paint(g);
+        g.drawLine(0, getHeight()/10*9, getWidth(), getHeight()/10*9);
         g.setColor(Color.MAGENTA);
         block.paint(g);
         g.setColor(Color.GREEN);
         paddle.paint(g);
+
     }
 
 }

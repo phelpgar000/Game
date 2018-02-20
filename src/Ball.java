@@ -3,7 +3,7 @@ import java.awt.*;
 public class Ball {
 
     final int DIAM = 25;
-    final int SPEED = 7;
+    final int SPEED = 10;
     int x, y;
     double dx = SPEED, dy = -SPEED;
 
@@ -34,17 +34,18 @@ public class Ball {
 
     public void checkCollisons(Paddle other){
 
-        double paddleY = other.getBounds().getY();
-        double paddleC = other.getBounds().getHeight()/2;
-        double ballPos = y;
+       if(getBounds().intersects(other.getBounds())){
+        double paddleX = other.getBounds().getX();
+        double paddleC = other.getBounds().getWidth()/2;
+        double ballPos = x;
 
-        double relativeIntersect = (paddleY + paddleC) - ballPos;
+        double relativeIntersect = (paddleX + paddleC) - ballPos;
         double normalIntersect = relativeIntersect/paddleC;
         double bounceAngle = MAXANGLE * normalIntersect;
 
-        if(x+(DIAM/2) < paddleY)
+        if(x+(DIAM/2) < paddleX)
             ballPos = x + DIAM;
-        else if(x + DIAM/2 > paddleY + other.getBounds().getWidth())
+        else if(x + DIAM/2 > paddleX + other.getBounds().getWidth())
             ballPos = x;
         else
             ballPos = x + DIAM/2;
@@ -56,7 +57,11 @@ public class Ball {
             dy = (int)(SPEED*-Math.cos(bounceAngle));
         }
         dx = (int)(SPEED*-Math.sin(bounceAngle));
+        }
+    }
 
+    public Rectangle getBounds(){
+        return new Rectangle(x, y, DIAM, DIAM);
     }
 
     public void setPosition(int x, int y){

@@ -3,6 +3,7 @@ import java.awt.*;
 public class Paddle {
         private int x, y;
         private final int PWIDTH = 200, PHEIGHT = 20;
+        private final int MOVEMENT = 15;
         Board board;
         Game game;
         Ball ball;
@@ -18,12 +19,12 @@ public class Paddle {
         public void move(){
             if(game.isLeftPressed()){
                 if(x > 0){
-                    x -= 5;
+                    x -= MOVEMENT;
                 }
             }
             if(game.isRightPressed()){
                 if(x + PWIDTH < board.getWidth()){
-                    x += 5;
+                    x += MOVEMENT;
                 }
             }
         }

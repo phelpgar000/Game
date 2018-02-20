@@ -3,7 +3,8 @@ import java.awt.*;
 public class Block {
     private int x, y;
     private final int WIDTH = 75, HEIGHT = 35;
-    private final int row = 7;
+    private final int ROW = 7;
+    private final int COL = 3;
     final int SPACE = 20;
 
     Board board;
@@ -23,14 +24,14 @@ public class Block {
         this.y = y - HEIGHT/2;
     }
 
-    public void paint(Graphics g){
-        g.fillRect(x, y, WIDTH, HEIGHT);
+    public void makeBlocks(){
+        for(int i = 0; i<ROW; i++){
+            this.x += 15;
+            this.setPosition(x + SPACE, SPACE);
+        }
     }
 
-    public void makeBlocks(){
-        for(int i = 0; i<row; i++){
-            x += 15;
-            this.setPosition(x, SPACE);
-        }
+    public void paint(Graphics g){
+        g.fillRect(x, y, WIDTH, HEIGHT);
     }
 }

@@ -12,7 +12,7 @@ public class Game extends JFrame implements KeyListener{
         setResizable(false);
         setVisible(true);
         setFocusable(true);
-        setTitle("Break ya bricker");
+        setTitle("SUCK IT HUEGH HEFNIFNER");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         board = new Board(this);
         add(board);
