@@ -25,7 +25,7 @@ public class Board extends JPanel implements ActionListener{
     public void GameStart(){
 
         ball.setPosition(getWidth()/2, (getHeight()/10)*8);
-        block.makeBlocks();
+        block.setPosition(getWidth()/2, getHeight()/10);
         paddle.setPosition(getWidth()/2, getHeight()/10*9);
         timer = new Timer(1000/60, this);
         timer.start();
@@ -34,10 +34,10 @@ public class Board extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         paddle.move();
-        ball.move(paddle);
-        repaint();
+        ball.move(paddle, block);
 
-        ball.checkCollisons(paddle);
+        ball.checkCollisons(paddle, block);
+        repaint();
     }
 
     public int getSPACE(){

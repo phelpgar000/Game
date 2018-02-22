@@ -6,6 +6,7 @@ public class Block {
     private final int ROW = 7;
     private final int COL = 3;
     final int SPACE = 20;
+    Block[][] blocks = new Block[ROW][COL];
 
     Board board;
     Game game;
@@ -24,10 +25,16 @@ public class Block {
         this.y = y - HEIGHT/2;
     }
 
+    public Rectangle getBounds(){
+
+        return new Rectangle(x , y, WIDTH, HEIGHT);
+    }
+
     public void makeBlocks(){
         for(int i = 0; i<ROW; i++){
-            this.x += 15;
-            this.setPosition(x + SPACE, SPACE);
+            for(int k = 0; i<COL; k++){
+
+            }
         }
     }
 
