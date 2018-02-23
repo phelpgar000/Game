@@ -3,10 +3,6 @@ import java.awt.*;
 public class Block {
     private int x, y;
     private final int WIDTH = 75, HEIGHT = 35;
-    private final int ROW = 7;
-    private final int COL = 3;
-    final int SPACE = 20;
-    Block[][] blocks = new Block[ROW][COL];
 
     Board board;
     Game game;
@@ -26,16 +22,7 @@ public class Block {
     }
 
     public Rectangle getBounds(){
-
         return new Rectangle(x , y, WIDTH, HEIGHT);
-    }
-
-    public void makeBlocks(){
-        for(int i = 0; i<ROW; i++){
-            for(int k = 0; i<COL; k++){
-
-            }
-        }
     }
 
     public void paint(Graphics g){

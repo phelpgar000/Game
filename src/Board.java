@@ -7,6 +7,7 @@ public class Board extends JPanel implements ActionListener{
 
     Ball ball;
     Block block;
+    //Bricks bricks[][];
     Paddle paddle;
     Timer timer;
 
@@ -49,7 +50,20 @@ public class Board extends JPanel implements ActionListener{
         super.paintComponent(g);
         g.setColor(Color.BLUE);
         ball.paint(g);
-        g.drawLine(0, getHeight()/10*9, getWidth(), getHeight()/10*9);
+        g.drawLine(0, getHeight(), getWidth()/2, getHeight()/2);
+        g.drawLine(getWidth(), getHeight(), getWidth()/2, getHeight()/2);
+        g.setColor(Color.RED);
+        g.drawLine(0, getHeight()/10*9, getWidth()/2, getHeight()/2);
+        g.drawLine(getWidth(), getHeight()/10*9, getWidth()/2, getHeight()/2);
+        g.setColor(Color.CYAN);
+        g.drawLine(0, getHeight()/10*8, getWidth()/2, getHeight()/2);
+        g.drawLine(getWidth(), getHeight()/10*8, getWidth()/2, getHeight()/2);
+        g.setColor(Color.PINK);
+        g.drawLine(0, getHeight()/10*7, getWidth()/2, getHeight()/2);
+        g.drawLine(getWidth(), getHeight()/10*7, getWidth()/2, getHeight()/2);
+        g.setColor(Color.ORANGE);
+        g.drawLine(0, getHeight()/10*6, getWidth()/2, getHeight()/2);
+        g.drawLine(getWidth(), getHeight()/10*6, getWidth()/2, getHeight()/2);
         g.setColor(Color.MAGENTA);
         block.paint(g);
         g.setColor(Color.GREEN);
