@@ -1,4 +1,4 @@
-/*import java.awt.*;
+import java.awt.*;
 
 public class Bricks {
 
@@ -7,16 +7,28 @@ public class Bricks {
     Block[][] blocks = new Block[ROW][COL];
 
     Block block;
+    Board board;
+    Ball ball;
 
-    public void makeBlocks(Block block){
+    public Bricks(){
+        makeBlocks();
+    }
+
+    public void makeBlocks(){
         for(int i = 0; i<ROW; i++){
-            for(int k = 0; i<COL; k++){
-                blocks[ROW][COL] = new block.setPosition();
+            for(int k = 0; k<COL; k++){
+                blocks[i][k]=new Block(i,k);
+            }
+        }
+    }
+
+    public void paint(Graphics g){
+        for(int i = 0; i<ROW; i++){
+            for(int k = 0; k<COL; k++){
+                blocks[i][k].paint(g);
             }
         }
     }
 
 
-
 }
-*/

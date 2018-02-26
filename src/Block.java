@@ -3,22 +3,20 @@ import java.awt.*;
 public class Block {
     private int x, y;
     private final int WIDTH = 75, HEIGHT = 35;
+    private final int SPACE = 10;
 
     Board board;
     Game game;
     Ball ball;
 
-    public Block(Board board, Game game, Ball ball){
-        x = 0;
-        y = 0;
-        this.board = board;
-        this.game = game;
-        this.ball = ball;
+    public Block(int x, int y){
+        setPosition(x,y);
+
     }
 
     public void setPosition(int x, int y){
-        this.x = x - WIDTH/2;
-        this.y = y - HEIGHT/2;
+        this.x = SPACE + x*(WIDTH/2+SPACE);
+        this.y = SPACE + y*(HEIGHT/2+SPACE);
     }
 
     public Rectangle getBounds(){

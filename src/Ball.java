@@ -25,7 +25,7 @@ public class Ball {
             dx*=-1;
         }
         if(x < 0){
-            dx*=-7;
+            dx*=-1;
         }
 
         x += dx;
@@ -57,7 +57,7 @@ public class Ball {
             dy = (int)(SPEED*-Math.cos(bounceAngle));
         }
         dx = (int)(SPEED*-Math.sin(bounceAngle));
-        }
+    }
 
         if(getBounds().intersects(block.getBounds())) {
             double ballPos = x;
@@ -68,18 +68,12 @@ public class Ball {
             double normalIntersect = relativeIntersect/blockC;
             double bounceAngle = MAXANGLE * normalIntersect;
 
-            if(x+(DIAM/2) > blockX)
-                ballPos = x + DIAM;
-            else if(x + DIAM/2 < blockX + other.getBounds().getWidth())
-                ballPos = x;
-            else
-                ballPos = x + DIAM/2;
-
             if(y > board.getHeight()/2){
                 dx = (int)(SPEED*Math.cos(bounceAngle));
+                dy = (int)(SPEED*-Math.cos(bounceAngle));
             }
             if(y < board.getHeight()/2){
-                dy = (int)(SPEED*-Math.cos(bounceAngle));
+                dy = (int)(SPEED*Math.cos(bounceAngle));
             }
             dx = (int)(SPEED*-Math.sin(bounceAngle));
         }

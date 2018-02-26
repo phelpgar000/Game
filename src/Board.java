@@ -7,9 +7,10 @@ public class Board extends JPanel implements ActionListener{
 
     Ball ball;
     Block block;
-    //Bricks bricks[][];
+
     Paddle paddle;
     Timer timer;
+    Blocks blocks;
 
     final int SPACE = 20;
 
@@ -18,7 +19,7 @@ public class Board extends JPanel implements ActionListener{
         setPreferredSize(new Dimension(800, 600));
         setBackground(Color.BLACK);
         ball = new Ball(this);
-        block = new Block(this, game, ball);
+        blocks = new Blocks();
         paddle = new Paddle(this, game, ball);
 
     }
@@ -26,7 +27,6 @@ public class Board extends JPanel implements ActionListener{
     public void GameStart(){
 
         ball.setPosition(getWidth()/2, (getHeight()/10)*8);
-        block.setPosition(getWidth()/2, getHeight()/10);
         paddle.setPosition(getWidth()/2, getHeight()/10*9);
         timer = new Timer(1000/60, this);
         timer.start();
@@ -68,6 +68,7 @@ public class Board extends JPanel implements ActionListener{
         block.paint(g);
         g.setColor(Color.GREEN);
         paddle.paint(g);
+        blocks.paint(g);
 
     }
 
