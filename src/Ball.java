@@ -25,7 +25,7 @@ public class Ball {
             dx*=-1;
         }
         if(x < 0){
-            dx*=-1;
+            dx*=-7;
         }
 
         x += dx;
